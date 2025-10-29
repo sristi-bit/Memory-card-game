@@ -1,0 +1,75 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 600px;
+}
+
+.stats {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  background: #0077cc;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card.flip .front {
+  transform: rotateY(-180deg);
+}
+
+.card.flip .back {
+  transform: rotateY(0);
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.front {
+  background: #0077cc;
+  transform: rotateY(0);
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  background: white;
+  transform: rotateY(180deg);
+}
+
+.hidden {
+  display: none;
+}
